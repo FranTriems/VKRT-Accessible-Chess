@@ -121,6 +121,4 @@ Contributions, reproducible bug reports, localization work, and accessibility fe
 
 ---
 
-**Created by [Francisco Triemstra (FranTriems)](https://github.com/FranTriems) · VKRT · Argentina**
-
 *Built to make chess more accessible, one move at a time.*
