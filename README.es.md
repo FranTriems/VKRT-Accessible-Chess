@@ -79,4 +79,4 @@ El desarrollador comprobó que la versión española abre en Samsung Galaxy A20 
 
 El proyecto usa ingeniería asistida por IA bajo gobernanza VKRT: cambios aislados, evidencias de procedencia, pruebas de regresión y aceptación humana antes de publicar. Los informes de tests no sustituyen las pruebas de accesibilidad reales.
 
-*Para que jugar ajedrez dependa cada vez menos de poder ver.*
+*Creado para un ajedrez más accesible, un paso a la vez.*
