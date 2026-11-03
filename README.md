@@ -14,9 +14,9 @@
 
 Created and maintained by **Francisco Triemstra ([FranTriems](https://github.com/FranTriems))**, independent developer from Argentina and creator of **VKRT** Software Factory.
 
-[**Download the Android alpha**](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1) · [**Source code**](https://github.com/FranTriems/VKRT-Accessible-Chess) · [**Report an issue**](https://github.com/FranTriems/VKRT-Accessible-Chess/issues)
+[**Download v0.5.0-alpha.2 (English / Español)**](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.2) · [**Source code**](https://github.com/FranTriems/VKRT-Accessible-Chess) · [**Report an issue**](https://github.com/FranTriems/VKRT-Accessible-Chess/issues)
 
-> **Alpha release — v0.5.0-alpha.1.** The Android APK has been installed and voice move recognition has been exercised on a Samsung Galaxy A20. This is an experimental preview, **not an accessibility-certified or production-signed release**. Complete independent, no-vision testing with TalkBack is still pending.
+> **Current pre-release — v0.5.0-alpha.2 (English / Español).** Both languages are implemented in the downloadable experimental Android debug APK. Spanish voice move recognition was exercised on a Samsung Galaxy A20 with the earlier alpha; **English recognition and this bilingual APK have not yet been tested on a physical device**. This is not a production-signed or accessibility-certified release. Independent no-vision and TalkBack acceptance remain pending.
 
 ## What is VKRT Accessible Chess?
 
@@ -39,40 +39,61 @@ The goal is simple: **make playing chess possible with less visual and tactile c
 
 ## Language support
 
-**Published v0.5.0-alpha.1:** Spanish (`es-AR`) voice interface only.
+**Published v0.5.0-alpha.2:** selectable **English (`en-US`) and Spanish (`es-AR`)** interface text, spoken command grammar, context-sensitive help, recognition-language request and TTS voice selection. Your language choice persists across restarts. The independent C++20 game core and Stockfish integration remain unchanged.
 
-**R34 / v0.5.0-alpha.2-rc1 source candidate on main (bilingual APK not released):** selectable Spanish (`es-AR`) and English (`en-US`) interface, speech-recognition language request, spoken commands, contextual help and local TTS voice selection. The selection persists across restarts. The game saves and independent C++20 core remain unchanged. Recognition and voice availability depend on installed Android services, and English speech has **not yet been tested on a physical device**.
+**Testing boundary:** the Android build and bilingual command tests passed, but **English recognition on a real device, complete TalkBack interaction, and independent blind-user acceptance remain unverified**. Recognition and voice availability depend on installed Android services and voices.
 
-Switch languages by saying **“idioma inglés”**, **“idioma español”**, **“switch to English”**, or **“switch to Spanish”**, as recognized by the active speech provider. You can also say **“idioma”** or **“language”** to open the accessible chooser. TalkBack users have a **Choose language / Elegir idioma** accessibility action. Android speech services may not recognize a foreign-language switching phrase reliably; the chooser is the deterministic fallback.
+Switch languages using **“language”**, **“switch to English”** or **“switch to Spanish”**. TalkBack also exposes a **Choose language** accessibility action. Because speech recognizers may not reliably understand a command spoken in the other language, use the accessible chooser if the spoken switch fails.
 
-## Voice commands — Spanish / English (R34 candidate)
+## Voice commands (English)
 
-| Say | What it does |
+These are implemented examples from the English command grammar in `v0.5.0-alpha.2`, not a claim of successful English recognition on all Android devices.
+
+| Say in English | Action |
 | --- | --- |
-| `presentación` | Repeat the introduction |
-| `ayuda` | Explain available commands |
-| `e2 e4` or `peón de e2 a e4` | Propose a move |
-| `origen e2`, then `destino e4` | Compose a move step by step |
-| `opciones` | Read available legal moves |
-| `opción dos` | Review the second listed move |
-| `siguientes` / `anteriores` | Browse additional move options |
-| `confirmar` / `cancelar` | Accept or reject a pending action |
-| `tablero` / `fila dos` | Hear the board or a selected rank |
-| `estado` / `historial` | Hear the current state or move history |
-| `sugerencia` | Request an optional Stockfish suggestion |
-| `nueva partida` | Request a new game, with confirmation |
+| `introduction` | Hear the introduction again |
+| `help` | Hear contextual instructions |
+| `board` | Hear the current board position |
+| `rank two` | Read the second rank |
+| `square e4` | Identify square e4 |
+| `status` | Hear whose turn it is and the game status |
+| `history` | Hear the move history |
+| `legal moves` | List available legal moves |
+| `option two` | Review the second numbered option |
+| `next` / `previous` | Navigate groups of available moves |
+| `from e2 to e4` | Propose a coordinate move |
+| `pawn from e2 to e4` | Propose a move with the piece name |
+| `from e2`, then `to e4` | Enter a move in two steps |
+| `castle kingside` | Propose kingside castling, if legal |
+| `confirm` / `cancel` | Accept or reject a pending action |
+| `undo` | Request to take back the last move |
+| `new game` | Request a new game (confirmation required) |
+| `suggestion` | Request an optional Stockfish move suggestion |
+| `language` | Open the accessible language chooser |
+| `switch to Spanish` | Select Spanish speech and interface language |
 
-English examples available in the R34 candidate: `help`, `introduction`, `board`, `rank two`, `status`, `history`, `legal moves`, `option two`, `next`, `previous`, `from e2 to e4`, `pawn from e2 to e4`, `confirm`, `cancel`, `new game`, `undo`, `suggestion`, `language Spanish`. The published alpha.1 APK remains Spanish-only.
+A recognized move must pass native legality checks and explicit confirmation before being applied. Recognition accuracy and spoken feedback depend on the installed Android speech and TTS services.
 
 The app depends on an Android speech recognition service. Some services may process audio remotely; availability, privacy behavior, and microphone permissions depend on the service and device settings. The app does not require Stockfish to validate its own chess moves.
 
 ## Download and installation
 
-Download the **Android debug APK** from the [v0.5.0-alpha.1 release](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1).
+Download the **English / Spanish Android debug APK** from the **[v0.5.0-alpha.2 pre-release](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.2)**. The previous [Spanish-only alpha.1](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1) remains available.
 
-The APK is an **experimental debug build**, not a Play Store or production-signed release. Install it only if you understand the preview status. Check the accompanying `SHA256SUMS.txt` when verifying downloaded artifacts. The release also contains corresponding source material, including the separately licensed Stockfish sources.
+The APK is an **experimental debug build**, not a Play Store or production-signed release. Install it only if you understand the preview status. Check the accompanying `SHA256SUMS.txt` when verifying downloaded artifacts. The release also contains the tagged project source and the separately licensed Stockfish 19 source.
+
+**Version note:** the GitHub release tag is `v0.5.0-alpha.2`, while the unchanged APK reports internal `versionName` `0.5.0-alpha.2-rc1`. Both refer to the same qualified R34 build, not two different binaries.
 
 **Platform:** Android 8.0 (API 26) or newer, with `armeabi-v7a` or `arm64-v8a` support. Device-specific voice-service compatibility is not guaranteed.
+
+## Release history
+
+| Version | Distribution | Verification status |
+| --- | --- | --- |
+| [v0.5.0-alpha.2](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.2) | Experimental bilingual Android debug APK (`en-US` / `es-AR`) | Native and bilingual host tests passed; English and TalkBack real-device acceptance pending |
+| [v0.5.0-alpha.1](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1) | Earlier Spanish-only Android debug APK | Spanish move recognition observed on a Samsung Galaxy A20; independent accessibility acceptance pending |
+
+For alpha.2, the release assets are the Android APK, tagged project source ZIP, official Stockfish 19 source ZIP, and `SHA256SUMS.txt`. Use the SHA-256 file and official release assets rather than third-party repackaging.
 
 ## Architecture
 
@@ -93,13 +114,13 @@ cmake --build build-host --config Release
 ctest --test-dir build-host -C Release --output-on-failure
 ```
 
-The R31 release qualification reported **8/8 native CTest cases passing**, together with Java command-grammar, UCI transport, and voice-first host tests. R34 adds bilingual parser and presentation regression tests; do not infer device acceptance from host tests. These results are **not** a substitute for device or accessibility testing.
+The alpha.2 qualification reported **8/8 native CTest cases passing**, **56 bilingual voice-command cases**, Spanish compatibility checks, and Java/UCI and voice-first host checks. The APK was built and signature-matched on Windows; its SHA-256 is `2b06a3b55885a3ac06cfa6d0d4d06a566c707cb5a87027715c2640b89cf308fc`. Automated checks do **not** replace English speech or TalkBack testing on a device.
 
 To build the Android app with Stockfish, consult [`docs/BUILD_ANDROID_STOCKFISH.md`](docs/BUILD_ANDROID_STOCKFISH.md) and [`docs/STOCKFISH_PROVENANCE.json`](docs/STOCKFISH_PROVENANCE.json). The official Stockfish archives must be obtained and staged according to their verified provenance; they are not committed as application source binaries.
 
 ## Accessibility status and roadmap
 
-**Current operator observation:** the published Spanish alpha starts on a Samsung Galaxy A20 and recognizes spoken chess moves. English is a development candidate pending device verification. **Not yet qualified:** completing a game independently with TalkBack and without vision, speech feedback timing, permission and failure recovery across devices, and the complete guided experience.
+**Current operator observation:** the earlier Spanish alpha starts on a Samsung Galaxy A20 and recognizes spoken chess moves. **The bilingual alpha.2 is publicly downloadable, but its English voice behavior has not yet been tested on a physical device.** Completing a game independently without vision, complete TalkBack workflows, speech timing, permission recovery and broad device compatibility are also not yet qualified.
 
 Priorities include better conversational guidance, independent blind-user testing, clearer speech feedback, broader Android compatibility, and real-device **English-language qualification**. See [`docs/ACCESSIBILITY_STATUS.md`](docs/ACCESSIBILITY_STATUS.md).
 
