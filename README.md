@@ -1,4 +1,11 @@
-# VKRT Accessible Chess — Ajedrez accesible por voz
+    ██╗   ██╗██╗  ██╗██████╗ ████████╗
+    ██║   ██║██║ ██╔╝██╔══██╗╚══██╔══╝
+    ██║   ██║█████╔╝ ██████╔╝   ██║
+    ╚██╗ ██╔╝██╔═██╗ ██╔══██╗   ██║
+     ╚████╔╝ ██║  ██╗██║  ██║   ██║
+      ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+
+# VKRT Accessible Chess — Ajedrez accesible por voz - Creado por Francisco Triemstra
 
 **Versión:** `v0.5.0-alpha.1` (pre-release). **Plataforma:** Android, C++20 nativo y Java sin frameworks de UI externos.
 
