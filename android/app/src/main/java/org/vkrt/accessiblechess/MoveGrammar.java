@@ -10,6 +10,26 @@ final class MoveGrammar {
     private static final Pattern MOVE = Pattern.compile(
         "^(?:de )?([a-h]) ?([1-8])(?: a)? ?([a-h]) ?([1-8])(?: ?(?:promocion )?(q|r|b|n|dama|torre|alfil|caballo))?$");
     private MoveGrammar() {}
+    /** English coordinates and named-piece variants. Native chess rules still validate every UCI result. */
+    static String parseEnglish(String raw) {
+        if (raw==null || raw.length()>120) return null;
+        String s=Normalizer.normalize(raw.toLowerCase(Locale.ROOT),Normalizer.Form.NFD)
+            .replaceAll("\\p{M}","").replaceAll("[^a-z0-9 ]"," ").trim().replaceAll("\\s+"," ");
+        if(s.equals("cancel"))return "cancel";
+        if(s.equals("castle kingside")||s.equals("kingside castle")||s.equals("short castle"))return "castle_k";
+        if(s.equals("castle queenside")||s.equals("queenside castle")||s.equals("long castle"))return "castle_q";
+        s=s.replaceFirst("^(?:move |play )","");
+        s=s.replaceFirst("^(?:pawn|knight|rook|bishop|queen|king)(?: from)? ","");
+        s=s.replaceFirst("^from ","");
+        s=s.replaceAll("\\bto\\b", "a");
+        s=s.replaceAll("\\bpromote a\\b", "promocion");
+        s=s.replaceAll("\\bpromotion a\\b", "promocion");
+        s=s.replaceAll("\\bpromotion\\b", "promocion");
+        s=s.replaceAll("\\bqueen\\b","q").replaceAll("\\brook\\b","r")
+            .replaceAll("\\bbishop\\b","b").replaceAll("\\bknight\\b","n");
+        s=VoiceCommands.englishNumbers(s);
+        return parse(s);
+    }
     static String parse(String raw) {
         if (raw == null || raw.length() > 120) return null;
         String s = Normalizer.normalize(raw.toLowerCase(Locale.ROOT), Normalizer.Form.NFD)

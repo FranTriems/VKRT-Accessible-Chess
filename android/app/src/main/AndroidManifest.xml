@@ -5,7 +5,7 @@
     <intent><action android:name="android.speech.RecognitionService" /></intent>
     <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
   </queries>
-  <application android:extractNativeLibs="true" android:allowBackup="false" android:label="VKRT Ajedrez Accesible" android:theme="@android:style/Theme.Material.NoActionBar" android:supportsRtl="true">
+  <application android:extractNativeLibs="true" android:allowBackup="false" android:label="VKRT Accessible Chess" android:theme="@android:style/Theme.Material.NoActionBar" android:supportsRtl="true">
     <activity android:name=".MainActivity" android:exported="true">
       <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
     </activity>
