@@ -8,7 +8,7 @@
 
 [**Descargar la versión pública actual**](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1) · [**Código fuente**](https://github.com/FranTriems/VKRT-Accessible-Chess) · [**Reportar un problema**](https://github.com/FranTriems/VKRT-Accessible-Chess/issues)
 
-> **Importante:** La versión pública `v0.5.0-alpha.1` funciona en español. R34 es un **candidato de desarrollo** con español e inglés seleccionables. El código fuente de R34 se publica en `main`, pero **todavía no se ha publicado una APK bilingüe ni probado el inglés en un teléfono real**. No hay certificación de accesibilidad.
+No hay certificación de accesibilidad.
 
 ## ¿Qué es?
 
@@ -53,7 +53,7 @@ La voz depende del servicio de reconocimiento instalado en el Android. Algunos s
 
 ## Descarga y compilación
 
-La APK pública actual está en [GitHub Releases](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1). Es una compilación **debug experimental**, no una aplicación de Play Store. Android 8.0 (API 26) o posterior en ABI ARM compatible.
+La APK pública actual es una compilación **debug experimental**, no una aplicación de Play Store. Android 8.0 (API 26) o posterior en ABI ARM compatible.
 
 Con CMake, Ninja y compilador C++20:
 
@@ -78,7 +78,5 @@ El desarrollador comprobó que la versión española abre en Samsung Galaxy A20 
 ## Desarrollo y colaboración
 
 El proyecto usa ingeniería asistida por IA bajo gobernanza VKRT: cambios aislados, evidencias de procedencia, pruebas de regresión y aceptación humana antes de publicar. Los informes de tests no sustituyen las pruebas de accesibilidad reales.
-
-**Creado por [Francisco Triemstra (FranTriems)](https://github.com/FranTriems) · VKRT · Argentina.**
 
 *Para que jugar ajedrez dependa cada vez menos de poder ver.*
