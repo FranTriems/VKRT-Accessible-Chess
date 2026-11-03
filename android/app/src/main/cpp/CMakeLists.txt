@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(vkrt_chess_android LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_library(vkrt_chess_jni SHARED chess_jni.cpp ../../../../../native/src/chess.cpp)
+target_include_directories(vkrt_chess_jni PRIVATE ../../../../../native/include)
+target_compile_options(vkrt_chess_jni PRIVATE -Wall -Wextra -Wpedantic)

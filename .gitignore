@@ -1,0 +1,18 @@
+# build products, keys and local data
+**/build/
+**/.gradle/
+**/.cxx/
+**/local.properties
+**/jniLibs/
+**/captures/
+**/PRIVATE_LOGS/
+**/runs/
+*.apk
+*.jks
+*.keystore
+*.log
+*.zip
+*.tar.gz
+__pycache__/
+.pytest_cache/
+.idea/
