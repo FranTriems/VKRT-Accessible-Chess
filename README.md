@@ -12,7 +12,7 @@
 
 **Open-source, voice-first chess for Android — built around accessibility, a native C++20 chess core, and an optional Stockfish engine.**
 
-Created and maintained by **Francisco Triemstra ([FranTriems](https://github.com/FranTriems))**, independent developer from Argentina and creator of **VKRT**.
+Created and maintained by **Francisco Triemstra ([FranTriems](https://github.com/FranTriems))**, independent developer from Argentina and creator of **VKRT** Software Factory.
 
 [**Download the Android alpha**](https://github.com/FranTriems/VKRT-Accessible-Chess/releases/tag/v0.5.0-alpha.1) · [**Source code**](https://github.com/FranTriems/VKRT-Accessible-Chess) · [**Report an issue**](https://github.com/FranTriems/VKRT-Accessible-Chess/issues)
 
